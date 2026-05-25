@@ -1,1 +1,6 @@
-pnpm exec nx affected -t lint,typecheck,test --base=origin/main
+#!/usr/bin/env sh
+if git rev-parse --verify origin/main >/dev/null 2>&1; then
+  pnpm exec nx affected -t lint,typecheck,test --base=origin/main
+else
+  pnpm exec nx run-many -t lint,typecheck,test -p web,api,shared
+fi

@@ -1,0 +1,13 @@
+---
+description: Prisma 7 schema, migrations, and client generation
+globs: apps/api/prisma/**/*,prisma.config.ts
+alwaysApply: false
+---
+
+# Prisma 7
+
+- **No `url` in `schema.prisma`** — connection string lives in root `prisma.config.ts`.
+- Generator: `provider = "prisma-client"`, `output = "../src/generated/prisma"`.
+- After schema changes: `pnpm prisma:generate` then add migration SQL under `apps/api/prisma/migrations/`.
+- Seed: `apps/api/prisma/seed.ts` uses `PrismaPg` + generated client (same as `PrismaService`).
+- Do not hand-edit generated files under `apps/api/src/generated/`.

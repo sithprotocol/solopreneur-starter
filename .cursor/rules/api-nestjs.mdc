@@ -1,0 +1,14 @@
+---
+description: NestJS API conventions (apps/api)
+globs: apps/api/**/*
+alwaysApply: false
+---
+
+# NestJS API (`apps/api`)
+
+- Listen on `PORT` (default 3001). Routes have **no** global `/api` prefix.
+- Use `@starter/shared` types for cross-app DTOs.
+- Config: extend `env.schema.ts` (Zod) + `@nestjs/config`; do not read `process.env` ad hoc in controllers.
+- Prisma: import `PrismaClient` from `../generated/prisma/client`; wire via `PrismaPg` adapter in `PrismaService` only.
+- New features: module → controller → service pattern; colocate `*.spec.ts` with mocks (see `health.controller.spec.ts`).
+- CORS: respect `FRONTEND_URL` in `main.ts` when adding origins.

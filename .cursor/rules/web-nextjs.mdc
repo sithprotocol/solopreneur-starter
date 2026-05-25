@@ -1,0 +1,14 @@
+---
+description: Next.js and shadcn conventions (apps/web)
+globs: apps/web/**/*
+alwaysApply: false
+---
+
+# Next.js web (`apps/web`)
+
+- App Router under `src/app/`. Use `@/` imports (`@/components`, `@/lib`).
+- shadcn UI in `src/components/ui/`; merge classes with `cn()` from `@/lib/utils`.
+- Call API via `NEXT_PUBLIC_API_URL` (see `health-panel.tsx`). No hardcoded production URLs.
+- Client components: `'use client'` when using hooks or browser APIs.
+- Unit tests go in `apps/web/specs/`, not under `src/`. Production build needs `NODE_ENV=production`.
+- Enable `output: 'standalone'` in `next.config.js` when changing Docker deploy paths.

@@ -110,6 +110,14 @@ pnpm e2e   # starts compose stack when E2E_USE_COMPOSE=true (CI)
 
 See [`infra/README.md`](infra/README.md) for AWS setup and GitHub variables.
 
+## AI agents (Cursor & Claude Code)
+
+| Doc                                | Purpose                                                 |
+| ---------------------------------- | ------------------------------------------------------- |
+| [`AGENTS.md`](AGENTS.md)           | Instructions for agents — setup, commands, architecture |
+| [`CLAUDE.md`](CLAUDE.md)           | Claude Code entry (points to `AGENTS.md`)               |
+| [`.cursor/rules/`](.cursor/rules/) | Cursor scoped rules (`.mdc`)                            |
+
 ## Forking for a new startup
 
 1. Rename `@starter/source` and update import paths (`@starter/shared`).

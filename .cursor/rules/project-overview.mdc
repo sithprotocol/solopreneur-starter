@@ -1,0 +1,12 @@
+---
+description: Monorepo overview and agent defaults for all work
+alwaysApply: true
+---
+
+# Starter monorepo
+
+- Nx + pnpm at repo root. Apps: `apps/web` (Next.js), `apps/api` (NestJS), `libs/shared`.
+- Full agent guide: `AGENTS.md`. Commands: `pnpm dev`, `pnpm test`, `pnpm typecheck`, `pnpm lint`.
+- Minimal scope: only change files required for the task. No drive-by refactors.
+- Prisma 7: run `pnpm prisma:generate` after schema edits. Never commit `.env`.
+- Do not create git commits unless the user asks.
